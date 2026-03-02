@@ -191,13 +191,13 @@ app.get('/api/multimovies/stream', async (req, res) => {
     let iframeUrl = playerData?.embed_url?.match(/<iframe[^>]+src="([^"]+)"[^>]*>/i)?.[1] || playerData?.embed_url;
 
     if (!iframeUrl) {
-      return res.status(404).json({ error: 'No iframe URL found' });
+      return res.status(404).json({ error: 'No iframe URL foundz' });
     }
 
     console.log('Iframe URL:', iframeUrl);
 
     // Handle external iframe URLs
-    if (!iframeUrl.includes('multimovies')) {
+    if (!iframeUrl.includes('iqsmartgames')) {
       let playerBaseUrl = new URL(iframeUrl).origin;
       
       try {
